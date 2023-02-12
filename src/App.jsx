@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-// components
-import HomeComponent from './components/home-component';
-import NavComponent from './components/nav-component';
-import SearchComponent from "./components/search-component";
+import Home from "./compnents/Home";
+import Nav from "./compnents/Nav";
+import Footer from "./compnents/Footer";
+import Search from "./compnents/Search";
 
 function App() {
-  // 追蹤導覽列開關
-  const [navOpen , setNavOpen] = useState(true);
   return (
     <div>
-      {navOpen && (
-        <NavComponent navOpen = {navOpen} setNavOpen = {setNavOpen}/>
-      )}
+      <Nav/>
       <Routes>
-        {!navOpen && (
-          <Route path="/price-watch-observer-client/" element={<HomeComponent navOpen = {navOpen} setNavOpen = {setNavOpen}/>} />
-        )}
-        <Route path="/price-watch-observer-client/search" element={<SearchComponent />} />
+        <Route path="/price-watch-observer-client/" element={<Home />} />
+        <Route path="/price-watch-observer-client/search" element={<Search />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
