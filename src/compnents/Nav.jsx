@@ -15,7 +15,7 @@ function Nav() {
   }
   return (
     // nav
-    <div className=' flex justify-between items-center shadow-lg p-2'>
+    <div className=' flex justify-between items-center shadow-lg p-2 w-screen'>
       {navChange && (
         // logo
         <Link to='/price-watch-observer-client/'>
@@ -24,8 +24,8 @@ function Nav() {
       )}
       
       {/* searchBar */}
-          {!navChange? <FaAngleLeft size={50} onClick={() => setNavChange(!navChange)}/> : <FaAngleLeft className='hidden'/>}
-        <form action="" className={ !navChange ? 'flex bg-gray-200 p-2 flex-grow justify-center items-center rounded-full' : 'hidden lg:flex bg-gray-200 p-2 flex-grow justify-center items-center rounded-full'}>
+          {!navChange? <FaAngleLeft size={20} onClick={() => setNavChange(!navChange)}/> : <FaAngleLeft className='hidden'/>}
+        <form action="" className={ !navChange ? 'flex bg-gray-200 p-2 flex-grow justify-center items-center rounded-full w-full' : 'hidden lg:flex bg-gray-200 p-2 flex-grow justify-center items-center rounded-full w-full'}>
           <FaSearch size={30} />
           <input type="text" className=' flex-grow bg-inherit  text-2xl pl-3 outline-none' placeholder='搜尋商品' onChange={handleSearch} value={input}/>
         </form>
