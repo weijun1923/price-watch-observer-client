@@ -35,19 +35,19 @@ function Nav() {
       {navChange && (
         // logo
         <Link to='/price-watch-observer-client/' className='p-0'>
-          <img src={Logo} alt="價格觀察網logo" className=' w-32 h-16 lg:w-[200px] lg:h-26 ml-2 lg:mr-20 ' id='logo'/>
+          <img src={Logo} alt="價格觀察網logo" className=' w-32 h-16 lg:w-[200px] lg:h-26 ml-2  ' id='logo'/>
         </Link>
       )}
 
       {/* searchBar */}
       {!navChange ? <FaAngleLeft size={30} onClick={() => setNavChange(!navChange)} className='mx-2'/> : <FaAngleLeft className='hidden' />}
-      <form action="" className={!navChange ? 'flex bg-gray-200 p-2  justify-center items-center rounded-full w-full' : 'hidden lg:flex bg-gray-200 p-2  justify-center items-center rounded-full w-2/4'}>
-        <FaSearch size={25} />
-        <input type="text" className=' bg-inherit  lg:text-2xl text-xl  pl-3 outline-none w-full' placeholder='搜尋商品' onChange={handleSearch} value={input} />
+      <form action="" className={!navChange ? 'flex bg-gray-200 p-2  justify-center items-center rounded-full w-full' : 'hidden lg:flex bg-gray-200 p-2  justify-center items-center rounded-full lg:w-5/12'}>
+        <FaSearch className='w-6 h-6 lg:w-10 lg:h-10 lg:ml-5'/>
+        <input type="text" className=' bg-inherit  lg:text-3xl text-xl  pl-3 outline-none w-full ' placeholder='搜尋商品' onChange={handleSearch} value={input} />
       </form>
       {navChange && (
         // icons
-        <div className=''>
+        <div className='lg:mr-12'>
           <ul className='flex '>
             <li className=' bg-gray-200 p-2 rounded-full mx-1 lg:hidden hover:bg-gray-400' onClick={() => setNavChange(!navChange)}>
               {/* search */}
@@ -55,7 +55,7 @@ function Nav() {
                 <FaSearch className=' w-6 h-6 ' />
               </Link>
             </li>
-            <li className=' bg-gray-200 lg:p-3 p-2 rounded-full mx-1 hover:bg-gray-400'>
+            <li className=' bg-gray-200 lg:p-3 p-2 rounded-full mx-1 lg:mx-3 hover:bg-gray-400'>
               {/* shopcart */}
               <Link to='/price-watch-observer-client/cart'>
                 <FaShoppingCart className=' w-6 h-6 lg:w-10 lg:h-10' />
