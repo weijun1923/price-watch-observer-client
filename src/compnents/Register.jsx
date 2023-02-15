@@ -69,6 +69,11 @@ function Register() {
           <input type="tel" name='phone' className=' border border-gray-400 rounded-md pl-2 py-1 lg:my-3  lg:py-3' /> */}
           <label htmlFor="password">密碼 :</label>
           <input type="password" onChange={handleChangePassword} name='password' className=' border border-gray-400 rounded-md pl-2 py-1 lg:my-3  lg:py-3' />
+          {message && (
+            <div className='w-full bg-red-200 mt-5 p-1 rounded-md border border-red-600 lg:p-3 lg:border-[3px] text-center'>
+              {message}
+            </div>
+          )}
           <button onClick={handleRegister} className=' bg-red-500 text-white rounded-md mt-5 p-1 lg:py-3 hover:bg-red-600'>註冊</button>
           <div className='mt-3'>
             <h4 className='text-center text-gray-400 '>第三方註冊</h4>

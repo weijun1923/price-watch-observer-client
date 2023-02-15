@@ -7,7 +7,7 @@ import Search from "./compnents/Search";
 import Cart from "./compnents/Cart";
 import Login from "./compnents/Login";
 import Register from "./compnents/Register";
-import Personal from "./compnents/Personal";
+import Profile from "./compnents/Profile";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/price-watch-observer-client/cart" element={<Cart />} />
         <Route path="/price-watch-observer-client/login" element={<Login />} />
         <Route path="/price-watch-observer-client/register" element={<Register />} />
-        <Route path="/price-watch-observer-client/personal" element={<Personal />} />
+        <Route path="/price-watch-observer-client/Profile" element={<Profile />} />
         
       </Routes>
       <Footer/>

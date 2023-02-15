@@ -65,23 +65,23 @@ function Nav() {
               {/* auth */}
               <FaUser className=' w-6 h-6 lg:h-10 lg:w-10 ' />
               <ul  className={authToggle ? ' z-[1000] absolute right-0 w-2/3 lg:w-2/6 bg-white top-[90px] lg:top-[100px] h-screen  shadow-lg flex flex-col justify-start items-start ease-in-out duration-300' : ' fixed left-[-100%]'}>
-                <Link to='/price-watch-observer-client/personal' className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
+                <Link to='/price-watch-observer-client/Profile' className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
                   <li className=' bg-gray-200 rounded-full p-2 mr-3'>
                     <FaUser className=' w-6 h-6  lg:h-10 lg:w-10' />
                   </li>
-                  <span>個人資料</span>
+                  <span className='lg:text-3xl'>個人資料</span>
                 </Link>
                 <Link to='/price-watch-observer-client/login' className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
                   <li className=' bg-gray-200 rounded-full p-2 mr-3'>
-                    <FaDoorOpen className=' w-6 h-6 lg:w-7 lg:h-7' />
+                    <FaDoorOpen className=' w-6 h-6 lg:h-10 lg:w-10' />
                   </li>
-                  <span>登入</span>
+                  <span className='lg:text-3xl'>登入</span>
                 </Link>
                 <Link className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
                   <li className=' bg-gray-200 rounded-full p-2 mr-3'>
-                    <FaDoorClosed className=' w-6 h-6 lg:w-7 lg:h-7' />
+                    <FaDoorClosed className=' w-6 h-6 lg:h-10 lg:w-10' />
                   </li>
-                  <span>登出</span>
+                  <span className='lg:text-3xl'>登出</span>
                 </Link>
               </ul>
 
