@@ -13,7 +13,7 @@ import AuthService from "./services/auth.service";
 function App() {
   let [currentUser, setCurrentUser] = useState(AuthService.getCurrentUser());
   return (
-    <div>
+    <div className="app">
       <Nav/>
       <Routes>
         <Route path="/price-watch-observer-client/" element={<Home />} />
@@ -22,7 +22,6 @@ function App() {
         <Route path="/price-watch-observer-client/login" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/price-watch-observer-client/register" element={<Register />} />
         <Route path="/price-watch-observer-client/Profile" element={<Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-        
       </Routes>
       <Footer/>
     </div>

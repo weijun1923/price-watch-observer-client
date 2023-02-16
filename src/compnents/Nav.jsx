@@ -3,32 +3,32 @@ import { Link, useNavigate } from 'react-router-dom';
 // import { ReactComponent as Logo } from '../assets/logo.svg'
 import Logo from "../assets/logoEnglish.svg";
 import { FaShoppingCart, FaSearch, FaUser, FaAngleLeft, FaDoorOpen, FaDoorClosed } from "react-icons/fa"; //購物車
+import AuthServices from "../services/auth.service";
 
 function Nav() {
   const [authToggle, setAuthToggle] = useState(false);
   const [navChange, setNavChange] = useState(true);
   const [input, setInput] = useState('');
   const navigate = useNavigate(); //轉址
-
   const handleSearch = (e) => {
     setInput(e.value);
     navigate('/price-watch-observer-client/search');
     console.log(e.target.value);
   }
-
   useEffect(() => {
     const handleClick = (event) => {
       if (!event.target.closest('#auth')) {
         setAuthToggle(false);
       }
     };
-
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
   }, []);
-
+  const handleLogout = () => {
+    AuthServices.logout();
+  }
   return (
     // nav
     <div className='nav flex justify-between items-center shadow-lg p-2 w-screen relative '>
@@ -77,7 +77,7 @@ function Nav() {
                   </li>
                   <span className='lg:text-3xl'>登入</span>
                 </Link>
-                <Link className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
+                <Link onClick={handleLogout} className='flex justify-start items-center my-5 w-full hover:bg-gray-400 p-2 pl-5 hover:rounded-sm'>
                   <li className=' bg-gray-200 rounded-full p-2 mr-3'>
                     <FaDoorClosed className=' w-6 h-6 lg:h-10 lg:w-10' />
                   </li>
