@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import AuthServices from "../services/auth.service";
 
 function Login(props) {
-  let [loading, setLoading] = useState(false);
-  let { currentUser, setCurrentUser } = props;
+ 
+  let { currentUser, setCurrentUser, loading, setLoading } = props;
   const navigate = useNavigate();
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
@@ -75,7 +75,7 @@ function Login(props) {
         </h4>
       </div>
       <div className='flex flex-col justify-center items-center bg-white w-screen lg:w-5/12 pt-5 mt-3 shadow-xl lg:p-10 lg:rounded-lg'>
-        <div action="" className='flex flex-col w-4/5 md:w-3/5 lg:w-full lg:text-3xl'>
+        <div  className='flex flex-col w-4/5 md:w-3/5 lg:w-full lg:text-3xl'>
           <label htmlFor="email">電子信箱 :</label>
           <input type="email" onChange={handleChangeEmail} name='email' className=' border border-gray-400 rounded-md pl-2 py-1 lg:my-3 lg:py-3' />
           {/* <label htmlFor="phone">手機 :</label>

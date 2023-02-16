@@ -12,18 +12,26 @@ import AuthService from "./services/auth.service";
 
 function App() {
   let [currentUser, setCurrentUser] = useState(AuthService.getCurrentUser());
+  let [loading, setLoading] = useState(false);
   return (
     <div className="app">
-      <Nav/>
+      <Nav />
       <Routes>
         <Route path="/price-watch-observer-client/" element={<Home />} />
         <Route path="/price-watch-observer-client/search" element={<Search />} />
         <Route path="/price-watch-observer-client/cart" element={<Cart />} />
-        <Route path="/price-watch-observer-client/login" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-        <Route path="/price-watch-observer-client/register" element={<Register />} />
-        <Route path="/price-watch-observer-client/Profile" element={<Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/price-watch-observer-client/login" element={<Login
+          currentUser={currentUser} setCurrentUser={setCurrentUser}
+          loading={loading} setLoading={setLoading}
+        />} />
+        <Route path="/price-watch-observer-client/register" element={<Register
+          loading={loading} setLoading={setLoading}
+        />} />
+        <Route path="/price-watch-observer-client/Profile" element={<Profile
+          currentUser={currentUser} setCurrentUser={setCurrentUser}
+        />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
